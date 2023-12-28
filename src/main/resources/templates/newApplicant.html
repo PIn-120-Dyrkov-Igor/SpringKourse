@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Регистрация соискателя</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Навигационное меню -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Рекрутинг персонала</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">О нас</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Контакты</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/recruiter/new">Рекрутер</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/applicant/new">Соискатель</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Форма регистрации соискателя -->
+<div class="container mt-4">
+  <h1 class="text-center">Информация соискателя</h1>
+  <form action="#" th:action="@{/applicant/new}" th:object="${applicant}" method="post">
+    <div class="form-group">
+      <label for="firstName">Имя:</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Введите имя" th:field="*{firstName}">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Фамилия:</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" th:field="*{lastName}">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" placeholder="Введите email" th:field="*{email}">
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+    <button type="reset" class="btn btn-secondary">Сброс</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
